@@ -16,7 +16,8 @@ def get_candidate_(candidate_id):
 @app.route("/search/<candidate_name>")
 def get_candidates_by_name_(candidate_name):
     candidates = get_candidates_by_name(candidate_name)
-    return render_template('search.html', candidates=candidates)
+    number = len(get_candidates_by_name(candidate_name))
+    return render_template('search.html', candidates=candidates, number=number)
 
 @app.route("/skill/<skill_name>")
 def get_candidates_by_skill_(skill_name):

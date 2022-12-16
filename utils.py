@@ -11,9 +11,11 @@ def get_candidate(candidate_id):
     return candidates[candidate_id]
 
 def get_candidates_by_name(candidate_name):
+    dict_candidates = []
     for candidate in candidates:
-        if candidate_name == candidate["name"]:
-            return candidate
+        if candidate_name in candidate["name"].split(" "):
+            dict_candidates.append(candidate)
+    return dict_candidates
 
 def get_candidates_by_skill(skill):
     dict_candidates = []

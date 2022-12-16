@@ -1,2 +1,4 @@
-<h1>Найден 1 кандидат</h1>
-<p><a href="/candidate/{{candidates.id}}">{{ candidates.name }}</a></p>
+<h1>Найден {{ number }} кандидат</h1>
+{% for candidate in candidates%}
+    <p><a href="/candidate/{{candidate.id}}">{{ candidate.name }}</a></p>
+{% endfor %}
